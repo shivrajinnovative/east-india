@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 :root{
     --yellow-color: #FFE500;
     --red-color: #FF0000;
@@ -36,6 +37,10 @@ img{
     25%{transform:translate(-10px);}
     75%{transform:translate(10px);}
     100%{transform:translate(0px);}
+}
+.btn:hover{
+    background-color:black;
+    color: var(--red-color);
 }
 
 .btn img{
@@ -131,23 +136,11 @@ header .navbar-collapse{
 }
 header .top-info-section{
     width: 100%;
-}
-header .top-info-section ul{
     display: flex;
     justify-content: end;
     margin-bottom: 12px;
+    flex-wrap: wrap;
 }
-header .top-info-section ul li:not(:last-child){
-    margin-right: 8px;
-}
-header .top-info-section ul li a{
-    display: block;
-    text-align: center;
-}
-header .top-info-section ul li a img{
-    width: 30px;
-}
-
 header .navbar{
     padding: 0 0;
     flex-grow: initial;
@@ -242,8 +235,10 @@ header .navbar .navbar-nav .nav-link.active::before{
 .banner-section{
     margin-top:130px;
 }
+
 .banner-slider .slide-item{
     position: relative;
+    margin-left: -1px;
 }
 .banner-slider .slide-item .content-box{
     width: 100%;
@@ -259,7 +254,7 @@ header .navbar .navbar-nav .nav-link.active::before{
     color: #fff;
 }
 .banner-slider .slide-item .content-box h3{
-    font-size: 46px;
+    font-size: 40px;
 }
 .banner-slider .slide-item .content-box .btn{
     margin-top: 30px;
@@ -274,14 +269,19 @@ header .navbar .navbar-nav .nav-link.active::before{
     flex-direction: column;
     justify-content: center;
     position: absolute;
-    top: 0;
+    top: 50%;
     left: 20px;
-    height: 100%;
+    height: 50px;
+    width: 50px;
+    z-index: 999;
 }
 .banner-slider .owl-dots .owl-dot span{
-    background-color: #D9D9D9;
+    background-color: #bbbbbb;
     border-radius: 0;
     margin: 7px 0;
+    display: block;
+    height: 10px !important;
+    width: 10px !important;
 }
 .banner-slider .owl-dots .owl-dot.active span{
     background-color: #ffffff;
@@ -399,20 +399,18 @@ header .navbar .navbar-nav .nav-link.active::before{
     color: #333;
 }
 .work-section .column-box{
-    text-align: center;
     background-color: #fff;
-    height:280px;
+    height:300px;
     border-bottom:8px solid yellow;
     padding-bottom:20px;
-    position:relative;
+    position:relative;    
 }
 .work-section .column-box a{
     position:absolute;
     border-radius:50%;
     background-color:var(--red-color);
     left:50%;
-        top:90px;
-
+    top:90px;
     transform:translateX(-50%);
     color:white;
     line-height:80px;
@@ -424,17 +422,30 @@ header .navbar .navbar-nav .nav-link.active::before{
 }
 .work-section .column-box:hover a{
         top:50px;
-
     height:80px;
     width:80px;
 }
 .work-section .column-box h3{
-    font-size: 21px;
-    font-weight: 700;
+    font-size: 22px;
     line-height: 28px;
+    font-family: "Fira Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.column-box:hover h3{
+    color: var(--red-color);
+}
+@media (max-width:768px){
+    .work-section .column-box{
+        height:320px;   
+    }
 }
 
-
+@media (max-width:500px){
+    .work-section .column-box{
+        height:300px;   
+    }
+}
 
 
 
@@ -625,33 +636,13 @@ footer .copyright-block .scroll-to-top:hover{
 
  /*///////////////////////////////////// dynamic ///////////////////////////*/
 
-.breadcrumbb{
-    margin-top:15vh;
-    padding:14vh 0;
-    background:linear-gradient(to right,rgba(0, 0, 0, 1),rgba(143, 143, 143, 0)),url('../img/bg/breadcrumb-1.png');
-    background-size:100% 100%;
-    background-repeat:no-repeat;
-}
+
 .onhoverUp{
     transition:all 0.4s;
 }
 .onhoverUp:hover{
     transform:translateY(-10px)scale(1.03);
 }
-
-@media (max-width:768px){
-    .breadcrumbb{
-        margin-top:50PX;
-    }
-}
-
-@media (max-width:500px){
-    .breadcrumbb{
-    padding:8vh 0;
-    }
-}
-
-
 /*//////////////////////////////////About us/////////////////////////////////////// */
 .teamOfElipe{
     border: 1px dashed gray;
@@ -753,13 +744,18 @@ padding:25px;
     text-align:center;
 }
 .border-dashed{
-    border:1px dashed gray;
+    border:2px dashed red;
     height:250px;
     display:flex;
     justify-content:center;
     align-items:center;
+    transition: all .5s ;
 }
-
+.border-dashed:hover{
+    border:2px dashed red;
+    transform: translateY(-30px);
+    box-shadow: 0 10px 8px -5px gray;
+}
 .services p{
     height:50px;
 }
@@ -784,6 +780,16 @@ padding:25px;
 @keyframes projectImg{
     0%{transform: scale(0.5);}
     100%{transform: scale(1);}
+}
+.projectFilter{
+    cursor: pointer;
+}
+.projectFilter:hover{
+    font-weight: bolder;
+    color: red;
+    transition: all 0.5s;
+    padding-left: 20px;
+
 }
 .projectFilter.active{
     font-weight: bolder;

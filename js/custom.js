@@ -10,6 +10,8 @@
         smartSpeed: 500,
         autoplay: false,
         dots: true,
+        // mouseDrag: false,
+        // touchDrag: false,
         // animateOut: "fadeOut",
         animateIn: "fadeIn",
         autoplayTimeout: 7600,
@@ -66,22 +68,6 @@
             }
         }
     });
-
-    // review-slider
-    $(".review-slider").owlCarousel({
-        items: 1,
-        loop: true,
-        margin: 0,
-        dots: false,
-        nav: true,
-        autoplay: false,
-        animateIn: "fadeIn",
-        navText: [
-            '<span class="fa fa-chevron-left"></span>',
-            '<span class="fa fa-chevron-right"></span>',
-        ]
-    });
-   
    
 //   $(document).ready(function () {
 //       var lastScrollTop = 0;
