@@ -140,8 +140,7 @@ header .navbar-collapse{
 header .top-info-section{
     width: 100%;
     display: flex;
-    justify-content: end;
-    margin-bottom: 12px;
+    justify-content: space-between;
     flex-wrap: wrap;
 }
 header .navbar{
@@ -665,8 +664,11 @@ footer .copyright-block .scroll-to-top:hover{
 }
 /*//////////////////////////////////About us/////////////////////////////////////// */
 .teamOfElipe{
-    border: 1px dashed gray;
+    /* border: 1px dashed gray; */
     transition:all 1s ease;
+}
+.teamOfElipe h3{
+    min-height:70px
 }
 .teamOfElipe>div{
     padding:30px;
@@ -750,7 +752,8 @@ padding:25px;
 .serviceHeading{
     position:relative;
     background:yellow;
-    height:30px
+    height:30px;
+    overflow: visible !important;
 }
 
 .serviceHeading h2{
@@ -763,6 +766,9 @@ padding:25px;
     min-width:300px;
     text-align:center;
 }
+.services p{
+    height: 40px;
+}
 .border-dashed{
     border:2px dashed red;
     height:250px;
@@ -770,14 +776,16 @@ padding:25px;
     justify-content:center;
     align-items:center;
     transition: all .5s ;
+    overflow: hidden;
+}
+.border-dashed img{
+    height:250px;
+    object-fit:contain
 }
 .border-dashed:hover{
     border:2px dashed red;
     transform: translateY(-30px);
     box-shadow: 0 10px 8px -5px gray;
-}
-.services p{
-    height:50px;
 }
 
 
@@ -945,4 +953,11 @@ bottom: 0px;
     footer .copyright-block {
         padding-top:40px;
     }
+}
+
+.form-control{
+    color: white !important;
+}
+form ::placeholder{
+    color: gray !important;
 }

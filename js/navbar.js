@@ -5,8 +5,8 @@ $(document).ready(function () {
       if ($(window).width() > 768) { // Check if screen width is greater than 768 pixels
           if (st > lastScrollTop) {
               // Scroll down
-              $('.navbar').css('top', '-50px');
-              $('.navbar-brand').css({'padding':'0 20px 20px','transform': 'scale(0.7)'});
+              $('.navbar').css('top', '-60px');
+              $('.navbar-brand').css({'padding':'0 20px 20px','transform': 'scale(0.9)'});
               $('.navbar-brand span').css('display', 'none');
           } else {
               // Scroll up
